@@ -33,6 +33,7 @@ var formulario1={
             },
             {
                 xtype:'textfield',
+                id:'textogrados',
                 placeHolder:'Escribe los grados'
             },
             {
@@ -40,7 +41,9 @@ var formulario1={
                 text:'Realizar conversión',
                 ui:'confirm',
                 handler:function(){
-                    Ext.Msg.alert("Resultado de la conversion");
+                    var g= Ext.getCmp('textogrados').getValue();
+                    var res=(g-32)/1.8;
+                    Ext.Msg.alert("Resultado" + res);
                 }
             }
         ]
